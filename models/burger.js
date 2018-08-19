@@ -1,15 +1,18 @@
 var orm = require("../config/orm.js");
 
 var burger = {
+    // SELECT * FROM ?;
     all: function (callback) {
-        orm.selectAllFrom("burgers", function(res) {
+        orm.all("burgers", function(res) {
             callback(res);
-            console.log(res[0].burger_name);
-            console.log(res[0].devoured);
         });
     },
-    create: function () {
-        
+    // INSERT INTO burgers (burger_name, devoured) VALUES ('A', 0);
+    create: function (cols, vals, callback) {
+        orm.create("burgers", cols, vals, function(res) {
+            console.log("1",res);
+            callback(res);
+        });
     },
     update: function () {
 
