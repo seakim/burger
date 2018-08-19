@@ -1,0 +1,35 @@
+<h1>Burgers</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <h2>Burgers: ready</h2>
+            <ul>
+                {{#each burgers}} 
+                    {{#unless this.devoured}} 
+                        <p>
+                            <span class="label">Item:</span> 
+                            {{this.burger_name}} 
+                            {{!-- {{> burger-block devoured=true}} --}}
+                            {{!-- <a href="/{{this.id}}">Update this quote</a> --}}
+
+                        </p>
+                    {{/unless}} 
+                {{/each}}
+            </ul>
+
+            <h2>Burgers: Devoured</h2>
+            <ul>
+                {{#each burgers}} 
+                    {{#if this.devoured}} 
+                        <p><span class="label">Item:</span> {{this.burger_name}}</p>
+                    {{/if}} 
+                {{/each}}
+            </ul>
+        </div>
+
+        <div class="col-6">
+            <p>input</p>
+        </div>
+    </div>
+</div>
+
