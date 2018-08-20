@@ -1,2 +1,3 @@
 # burger
-RCB-HW14 (a logger with MySQL, Node, Express, Handlebars and ORM)
+RCB-HW14 (first full-stack with MySQL, Node, Express, Handlebars and ORM)
+
