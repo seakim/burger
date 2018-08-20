@@ -1,21 +1,21 @@
 var orm = require("../config/orm.js");
 
 var burger = {
-    // SELECT * FROM ?;
     all: function (callback) {
-        orm.all("burgers", function(res) {
-            callback(res);
-        });
+        // orm.all => (table, callback)
+        orm.all("burgers", callback);
     },
-    // INSERT INTO burgers (burger_name, devoured) VALUES ('A', 0);
     create: function (cols, vals, callback) {
-        orm.create("burgers", cols, vals, function(res) {
-            console.log("1",res);
-            callback(res);
-        });
+        // orm.create => (table, cols, vals, callback)
+        orm.create("burgers", cols, vals, callback);
     },
-    update: function () {
-
+    update: function (obj, condition, callback) {
+        // orm.update => (table, obj, condition, callback)
+        orm.update("burgers", obj, condition, callback);
+    },
+    delete: function (condition, callback) {
+        // orm.delete => (table, condition, callback)
+        orm.delete("burgers", condition, callback);
     }
 }
 

@@ -6,13 +6,7 @@
             <ul>
                 {{#each burgers}} 
                     {{#unless this.devoured}} 
-                        <p>
-                            <span class="label">Item:</span> 
-                            {{this.burger_name}} 
-                            {{!-- {{> burger-block devoured=true}} --}}
-                            {{!-- <a href="/{{this.id}}">Update this quote</a> --}}
-
-                        </p>
+                        {{> burger-block devoured=false}}
                     {{/unless}} 
                 {{/each}}
             </ul>
@@ -21,7 +15,7 @@
             <ul>
                 {{#each burgers}} 
                     {{#if this.devoured}} 
-                        <p><span class="label">Item:</span> {{this.burger_name}}</p>
+                        {{> burger-block devoured=true}}
                     {{/if}} 
                 {{/each}}
             </ul>

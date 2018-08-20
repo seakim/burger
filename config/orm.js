@@ -53,7 +53,7 @@ var orm = {
     },
     // INSERT INTO burgers (burger_name, devoured) VALUES ('A', 0);
     create: function (table, cols, vals, callback) {
-        var queryString = "INSERT INTO " + table;;
+        var queryString = "INSERT INTO " + table;
         queryString += " (" + cols.toString() + ") ";
         queryString += "VALUES";
         queryString += " (" + printQuestionMarks(vals.length) + ") ";
@@ -61,12 +61,32 @@ var orm = {
 
         connection.query(queryString, vals, function (err, result) {
             if (err) throw err;
-            console.log("2", result);
             callback(result);
         });
     },
     // UPDATE burgers SET burger_name = ?, devoured = ? WHERE id = ?;
-    updateOne: function () {
+    update: function (table, obj, condition, callback) {
+        var queryString = "UPDATE " + table;
+        queryString += " SET " + objToSql(obj);
+        queryString += " WHERE " + condition;
+        console.log(queryString);
+
+        connection.query(queryString, function(err, result) {
+            if (err) throw err;
+            callback(result);
+        });
+    },
+
+    // DELETE FROM burgers WHERE id = ?;
+    delete: function (table, condition, callback) {
+        var queryString = "DELETE FROM " + table;
+        queryString += " WHERE " + condition;
+        console.log(queryString);
+
+        connection.query(queryString, function(err, result) {
+            if (err) throw err;
+            callback(result);        
+        });
 
     }
 }

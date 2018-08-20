@@ -5,3 +5,6 @@ INSERT INTO burgers (burger_name, devoured) VALUES ('Grilled Artisan Chicken', t
 INSERT INTO burgers (burger_name, devoured) VALUES ('Buttermilk Chicken-Crispy', false);
 INSERT INTO burgers (burger_name, devoured) VALUES ('Filet-O-Fish', false);
 INSERT INTO burgers (burger_name, devoured) VALUES ('Classic Chicken Sandwich', false);
+
+
+DELETE FROM burgers WHERE id =

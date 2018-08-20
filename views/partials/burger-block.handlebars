@@ -1,9 +1,14 @@
-<li>
-	{{name}}
+<li class="row">
+	<span class="label col-auto">Item:</span> 
+	<span class="label col-6">{{burger_name}}</span>
 
-	<button class="devourIt" data-id="{{id}}" data-devour="{{devoured}}">
-		{{#if devoured}}Devour!
-		{{!-- {{else}}WAKE UP! --}}
-		{{/if}}
-	</button>
+	{{#if devoured}}
+		<span class="label col-auto">
+			<button class="delete" data-id="{{id}}" data-devoured="{{devoured}}">Delete!</button>
+		</span>
+	{{else}}
+		<span class="label col-auto">
+			<button class="devour" data-id="{{id}}" data-devoured="{{devoured}}">Devour!</button>
+		</span>
+	{{/if}}
 </li>
