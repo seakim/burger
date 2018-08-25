@@ -7,4 +7,3 @@ INSERT INTO burgers (burger_name, devoured) VALUES ('Filet-O-Fish', false);
 INSERT INTO burgers (burger_name, devoured) VALUES ('Classic Chicken Sandwich', false);
 
 
-DELETE FROM burgers WHERE id =
